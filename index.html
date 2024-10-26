@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Surprise</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0; /* Default background color */
+        }
+        .container {
+            text-align: center;
+            width: 100%;
+        }
+        .page {
+            display: none; /* Hide all pages initially */
+            width: 100vw; /* Set width to full viewport width */
+            height: 100vh; /* Set height to full viewport height */
+        }
+        .active {
+            display: block; /* Show active page */
+        }
+        h1 {
+            font-family: 'Cursive', sans-serif; /* Cursive style for headings */
+            margin: 0;
+        }
+        .swipe, .start {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        /* Styling for colorful text */
+        .colorful {
+            font-size: 24px;
+            font-weight: bold;
+            background: linear-gradient(90deg, #ff007f, #ffb300, #00c3ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Background images with specified sizes */
+        #page1 {
+            background-image: url('birthday1.jpg'); /* Replace with your image name */
+            background-size: 177px 285px; /* Set specific dimensions */
+            background-position: center; /* Center the image */
+            height: 285px; /* Set height */
+            width: 177px; /* Set width */
+        }
+        #page2 {
+            background-image: url('birthday2.jpg'); /* Replace with your image name */
+            background-size: 206px 245px; /* Set specific dimensions */
+            background-position: center; /* Center the image */
+            height: 245px; /* Set height */
+            width: 206px; /* Set width */
+        }
+        #page3 {
+            background-image: url('birthday3.jpg'); /* Replace with your image name */
+            background-size: 284px 177px; /* Set specific dimensions */
+            background-position: center; /* Center the image */
+            height: 177px; /* Set height */
+            width: 284px; /* Set width */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Page 1 -->
+        <div class="page active" id="page1">
+            <h1>Hey GM Birthday Girl.. 💞</h1>
+            <button class="swipe" onclick="showPage(2)">Swipe</button>
+        </div>
+
+        <!-- Page 2 -->
+        <div class="page" id="page2">
+            <h1 class="colorful">A happy birthday journey for u my ❤</h1>
+            <button class="start" onclick="showPage(3)">Let's Start</button>
+        </div>
+
+        <!-- Page 3 -->
+        <div class="page" id="page3">
+            <h1>A VERY HEARTFUL BIRTHDAY MY GURL 💞</h1>
+            <h2>I WILL BE THERE FOR U LIKE AN OXYGEN AT ANY COST</h2>
+            <audio controls autoplay>
+                <source src="birthday1.mp3" type="audio/mpeg"> <!-- Add your audio file here -->
+                Your browser does not support the audio tag.
+            </audio>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageNumber) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            // Show the selected page
+            document.getElementById('page' + pageNumber).classList.add('active');
+        }
+    </script>
+</body>
+</html>
